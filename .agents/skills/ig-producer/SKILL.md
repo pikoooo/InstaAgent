@@ -1,0 +1,22 @@
+---
+name: ig-producer
+description: Research health and wellness reels and produce original Hinglish podcast videos featuring Aryana, with script and visual review before Google Flow generation and final stitching. Use for the user's InstaAgent production workflow, not standalone captions or analytics.
+---
+
+# Instagram video production
+
+Read `instagram/production-brief.md` and `instagram/voice.md` first. Follow the relevant `ig-viral`, `ig-reel`, and `ig-human` skills. Use the user's example at the path in the production brief for dialogue, scene prompt style and pacing. The target audience is Indian and dialogue is natural Hindi-English, with consistent terminology. Do not imply Aryana is a medical professional.
+
+## Research and preparation
+
+Research current Instagram reels with available search and browser tools. Select 5–6 unless the user specifies another number. Do not build a crawler or use automated collection at volume. Record each reel URL, creator, date, collection date, views, recent account median when available, and the source of metrics; qualify trend claims. Download an individually selected reel with a supported method when possible. One selected source leads to one original finished video covering its relevant health points together, not a separate video per point. Transcribe/review the complete reference, identify satire and extract every relevant point; verify medical claims using current authoritative sources. Keep inspiration distinct from copied wording or video.
+
+Create one production folder per source. Prepare scene-by-scene Hinglish script with setting, camera, action and exact dialogue; segment primarily by dialogue length into approximately 10-second scenes. One point can span several scenes. Preserve Aryana, voice and podcast setting across scenes. Create a visual reference from the user's image using the available image-generation tool. Document the intended voice and acknowledge if the supplied sample cannot be passed to the chosen provider. Present the complete script and visuals to the user and wait for explicit approval before generating.
+
+## Record review and produce
+
+Use `.tools/instaagent-venv/bin/python .agents/skills/ig-producer/scripts/production.py` for the production record and assembly. The `--help` output lists commands. `prepare` records the review package and scene count; `approve` records a hash of the reviewed script, visual and source and must be called only after the user explicitly approves that exact package. `check` verifies it has not changed. The approval applies to the reviewed script and reference; if they change, repeat review and approval. When the user specifically authorizes a single scene, treat that as approval only for that scene, not the remaining scenes.
+
+Use Google Flow and Omni 1.2 Flash. The registered `google-flow` MCP has local Agent tools: `flow_agent_options` reads settings; `flow_agent_prepare` attaches a named project image and requests a quote; `flow_agent_confirm` approves the pending quote in the same server session; `flow_agent_reject` rejects an active request. One live test prepared, confirmed, generated and downloaded a single scene; this does not guarantee future generations. Review Flow's proposed prompt and quote before confirming. Quotes expire and are held only in the active server process. If confirmation reports submission unconfirmed, inspect the Flow session and billing before retrying. If these controls fail, use the signed-in Flow interface via computer use. The project's tested Flow Agent settings are vertical 9:16 and one output per scene; request one 10-second video for each approved scene, attach the approved reference, and preserve dialogue. Do not assume a project or voice reference is available without checking. If Flow cannot accept the provided voice sample, flag this clearly; a described voice is a preview and not a verified voice match. Follow spending limits and avoid unrequested variants or retries. Save each approved scene into the production folder, visually and audibly review identity, dialogue completion, voice, lip sync and continuity, and use `add-clip` in scene order. Do not treat file creation alone as audiovisual review.
+
+Use `stitch` after all expected clips are present and reviewed. It normalizes clips to portrait format and joins in scene order; inspect the result for missing audio, cuts and continuity. Deliver the final MP4, scene files, sources and any unresolved issues. Nothing is published without a separate explicit instruction.

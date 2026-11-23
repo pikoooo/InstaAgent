@@ -1,0 +1,72 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+credentials*.json
+secrets.json
+*secret*
+
+# OS/editor noise
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.venv/
+venv/
+env/
+.tools/instaagent-venv/
+.tools/google-flow-agent-mcp/
+.tools/google-flow-mcp/
+
+# Node dependencies and generated builds
+node_modules/
+.tools/*/node_modules/
+.tools/*/dist/
+.tools/node/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local caches and transient output
+.cache/
+cache/
+tmp/
+temp/
+*.log
+
+# Generated media and large binary assets
+*.mp4
+*.mov
+*.m4v
+*.webm
+*.wav
+*.mp3
+*.m4a
+*.avi
+*.mkv
+*.zip
+*.tar
+*.gz
+instagram/flow-output/
+instagram/runs/*/clips/
+instagram/runs/*/final.mp4
+
